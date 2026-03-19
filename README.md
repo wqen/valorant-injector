@@ -1,37 +1,43 @@
-# 🔗 Usermode Valorant Injector via SetWindowHookEx
+Here's the updated version with the post scriptum at the end:
 
-An updated fork of [DrNseven's hookloader](https://github.com/DrNseven/hookloader), a popular usermode injector for **VALORANT** using `SetWindowHookEx`. This technique allows DLL injection without using kernel drivers or vulnerable manual mapping — and despite what many are saying, **this method is still fully functional**.
+# Usermode VALORANT Injector via SetWindowHookEx
 
----
-
-## 💡 Why This Matters
-
-Lately, nearly every paid VALORANT cheat (P2C) relies on DrNseven’s hookloader — but most won’t admit it. Instead, they repackage it, make slight changes, and claim it’s their own detection-proof loader.
-
-Even worse, many claim this method is “patched” or “detected.” The truth is:  
-**They’re signing their DLLs with blacklisted or reused certificates, which triggers detection — not the injection method itself.**
+An updated fork of [DrNseven's hookloader](https://github.com/DrNseven/hookloader), a usermode DLL injector for VALORANT utilizing the `SetWindowHookEx` API. This implementation operates entirely in usermode without requiring kernel drivers or manual mapping techniques.
 
 ---
 
-## 🆕 What’s New in This Version
+## Technical Overview
 
-- ✅ Updated window class detection to `VALORANTUnrealWindow` (breaking change from recent updates)  
-- 🔧 Automatic export resolver — no need to define the function name manually  
-- 🧹 Cleaner, more organized codebase  
-- 🛠️ Minor internal improvements for clarity and stability  
+The SetWindowHookEx injection method remains functional despite widespread claims to the contrary. Many commercially available VALORANT cheats (P2C) are based on this technique, often repackaged with minimal modifications and falsely marketed as proprietary, detection-proof solutions.
 
----
+Common assertions that this method is "patched" or "detected" are typically misattributed. Detection events are more frequently caused by:
+- DLLs signed with blacklisted or reused code signing certificates
+- Signature-based detection of known cheat binaries
+- Behavioral analysis of the injected payload itself
 
-## 🔗 References
-
-- 📌 Original GitHub Repo: [DrNseven/hookloader](https://github.com/DrNseven/hookloader)  
-- 💬 Discussion & Binary: [UC Thread - hookloader fork](https://www.unknowncheats.me/forum/valorant/702198-hookloader-fork.html)
+The injection vector itself remains viable.
 
 ---
 
-## ⚠️ Disclaimer
+## Key Improvements
 
-This repository is provided **for educational and research purposes only**.  
-Usage against game terms of service or for malicious intent is not encouraged or supported.
+- **Updated Window Class Detection** – Modified to target `VALORANTUnrealWindow`, addressing a breaking change introduced in recent game updates
+- **Automatic Export Resolution** – Removes the requirement to manually specify export function names
+- **Codebase Restructuring** – Improved organization and readability for maintainability
+- **Stability Enhancements** – Minor internal refinements for consistent operation
+
+---
+
+## References
+
+- Original Repository: [DrNseven/hookloader](https://github.com/DrNseven/hookloader)  
+- Technical Discussion: [UnknownCheats Thread](https://www.unknowncheats.me/forum/valorant/702198-hookloader-fork.html)
+
+---
+
+## Disclaimer
+
+This repository is provided strictly for **educational and research purposes**.  
+The code is intended to demonstrate Windows API injection techniques in a controlled environment. Usage that violates software terms of service or applicable laws is neither endorsed nor supported.
 
 ---
