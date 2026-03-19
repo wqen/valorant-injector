@@ -1,5 +1,3 @@
-Here's the updated version with the post scriptum at the end:
-
 # Usermode VALORANT Injector via SetWindowHookEx
 
 An updated fork of [DrNseven's hookloader](https://github.com/DrNseven/hookloader), a usermode DLL injector for VALORANT utilizing the `SetWindowHookEx` API. This implementation operates entirely in usermode without requiring kernel drivers or manual mapping techniques.
